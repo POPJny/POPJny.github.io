@@ -7,17 +7,17 @@
   
   <title>集合 | 54の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不懂不会，撸码就完事了">
+  <meta name="description" content="Java中的集合框架大类可分为Collection和Map；两者的区别：  Collection是单列集合;Map是双列集合 Collection中只有Set系列要求元素唯一;Map中建需要唯一，值可以重复 Collection的数据结构是针对元素的;Map的数据结构是针对建的##Collection体系： Collection包括两大体系，List和Set#####List的特点 存取有序，有索">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合">
 <meta property="og:url" content="http://yoursite.com/2018/05/07/集合/index.html">
 <meta property="og:site_name" content="54の博客">
-<meta property="og:description" content="不懂不会，撸码就完事了">
+<meta property="og:description" content="Java中的集合框架大类可分为Collection和Map；两者的区别：  Collection是单列集合;Map是双列集合 Collection中只有Set系列要求元素唯一;Map中建需要唯一，值可以重复 Collection的数据结构是针对元素的;Map的数据结构是针对建的##Collection体系： Collection包括两大体系，List和Set#####List的特点 存取有序，有索">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-07T14:59:35.048Z">
+<meta property="og:updated_time" content="2018-05-07T15:33:13.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合">
-<meta name="twitter:description" content="不懂不会，撸码就完事了">
+<meta name="twitter:description" content="Java中的集合框架大类可分为Collection和Map；两者的区别：  Collection是单列集合;Map是双列集合 Collection中只有Set系列要求元素唯一;Map中建需要唯一，值可以重复 Collection的数据结构是针对元素的;Map的数据结构是针对建的##Collection体系： Collection包括两大体系，List和Set#####List的特点 存取有序，有索">
   
     <link rel="alternate" href="/atom.xml" title="54の博客" type="application/atom+xml">
   
@@ -90,7 +90,89 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Java中的集合框架大类可分为Collection和Map；两者的区别：</p>
+<ul>
+<li>Collection是单列集合;Map是双列集合</li>
+<li>Collection中只有Set系列要求元素唯一;Map中建需要唯一，值可以重复</li>
+<li><p>Collection的数据结构是针对元素的;Map的数据结构是针对建的<br>##Collection体系：<br> Collection包括两大体系，List和Set<br>#####List的特点<br> 存取有序，有索引，可以根据索引取值，元素可以重<br>#####Set的特点<br>  存取无需，元素不可以重复</p>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>  list包括Arraylist,LinkedList,Vector(已过时)<br>  ######ArrayList:底层是数值结构，查询快，增删慢<br>  package 集合;<br>import java.util.ArrayList;<br>import java.util.Iterator;<br>import java.util.List;<br>public class Test {<br>  // 使用ArrayList进行添加和遍历<br>  public static void main(String[] args) {</p>
+<pre><code>List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+list.add(&quot;接口1&quot;);
+list.add(&quot;接口2&quot;);
+list.add(&quot;接口3&quot;);
+// 第一种遍历方式,使用迭代器
+Iterator&lt;String&gt; it = list.iterator();
+while(it.hasNext()){
+    String next = it.next();
+    System.out.println(next);
+}
+System.out.println(&quot;-------------------&quot;);
+// 第二种遍历方式，使用foreach
+for (String str : list){
+    System.err.println(str);
+}
+</code></pre><p>  }<br>}<br>#####LinkedList:</p>
+<pre><code>是基于链表结构实现的，所以查询速度慢，增删速度快，提供了特殊的方法，对头尾的元素操作（进行增删查）
+
+使用LinkedList来实现栈和队列；栈是先进后出，而队列是先进先出
+
+######栈的实现
+package com.sihai.classtest;
+</code></pre><p>import java.util.LinkedList;<br>/**</p>
+<ul>
+<li>利用LinkedList来模拟栈</li>
+<li>栈的特点：先进后出</li>
+<li>@author sihai<br><em>
+</em>/<br>public class MyStack {<br>private LinkedList<string> linkList = new LinkedList<string>();<br>// 压栈<br>public void push(String str){<pre><code>linkList.addFirst(str);
+</code></pre>}<br>// 出栈<br>public String pop(){<pre><code>return linkList.removeFirst();
+</code></pre>}<br>// 查看<br>public String peek(){<pre><code>return linkList.peek();
+</code></pre>}<br>// 判断是否为空<br>public boolean isEmpty(){<pre><code>return linkList.isEmpty();
+</code></pre>}<br>}<br>package  集合;<br>public class Test {<br>public static void main(String[] args) {<pre><code>// 测试栈
+StackTest stack = new StackTest();
+stack.push(&quot;我是第1个进去的&quot;);
+stack.push(&quot;我是第2个进去的&quot;);
+stack.push(&quot;我是第3个进去的&quot;);
+stack.push(&quot;我是第4个进去的&quot;);
+stack.push(&quot;我是第5个进去的&quot;);
+// 取出
+while (!stack.isEmpty()){
+    String pop = stack.pop();
+    System.out.println(pop);
+}
+// 打印结果
+/*我是第5个进去的
+我是第4个进去的
+我是第3个进去的
+我是第2个进去的
+我是第1个进去的*/
+</code></pre>}<br>}<br>#####LinkedList实现Queue:<br>package  好好学java;<br>import java.util.LinkedList;<br>/**</string></string></li>
+<li>利用linkedList来实现队列</li>
+<li>队列: 先进先出</li>
+<li>@author sihai<br><em>
+</em>/<br>public class QueueTest {<br>private LinkedList<string> link = new LinkedList<string>();<br>// 放入<br>public void put(String str){<pre><code>link.addFirst(str);
+</code></pre>}<br>// 获取<br>public String get(){<pre><code>return link.removeLast();
+</code></pre>}<br>// 判断是否为空<br>public boolean isEmpty(){<pre><code>return link.isEmpty();
+</code></pre>}<br>}<br>package  集合;<br>public class Test {<br>public static void main(String[] args) {<pre><code>// 测试队列
+QueueTest queue = new QueueTest();
+queue.put(&quot;我是第1个进入队列的&quot;);
+queue.put(&quot;我是第2个进入队列的&quot;);
+queue.put(&quot;我是第3个进入队列的&quot;);
+queue.put(&quot;我是第4个进入队列的&quot;);
+// 遍历队列
+while (!queue.isEmpty()){
+    String str = queue.get();
+    System.out.println(str);
+}
+// 打印结果
+/*我是第1个进入队列的
+我是第2个进入队列的
+我是第3个进入队列的
+我是第4个进入队列的*/
+</code></pre>}<br>}</string></string></li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
