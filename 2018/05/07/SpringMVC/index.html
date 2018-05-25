@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="3745">
 <meta property="og:description" content="SpringMVC 支持restful的风格（GET，POST,DELETE,PUT） @RequestMapping(value = “/{id}”, method = RequestMethod.GET)  @RequestMapping(value = “/{id}”, method = RequestMethod.POST)  @RequestMapping(value = “/{id}”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-25T17:37:49.341Z">
+<meta property="og:updated_time" content="2018-05-25T17:42:36.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC">
 <meta name="twitter:description" content="SpringMVC 支持restful的风格（GET，POST,DELETE,PUT） @RequestMapping(value = “/{id}”, method = RequestMethod.GET)  @RequestMapping(value = “/{id}”, method = RequestMethod.POST)  @RequestMapping(value = “/{id}”">
@@ -97,11 +97,10 @@
 </li>
 <li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.DELETE)   // 因为这个需要Ajax请求，所有返回的是个json</p>
 </li>
-<li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.PUT)<br>####简写@RequestMapping(“/{id}”)但是这样不能再设置请求类型了，会是默认的GET请求</p>
-</li>
+<li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.PUT)</p>
+<h4 id="简写-RequestMapping-“-id-”-但是这样不能再设置请求类型了，会是默认的GET请求"><a href="#简写-RequestMapping-“-id-”-但是这样不能再设置请求类型了，会是默认的GET请求" class="headerlink" title="简写@RequestMapping(“/{id}”)但是这样不能再设置请求类型了，会是默认的GET请求"></a>简写@RequestMapping(“/{id}”)但是这样不能再设置请求类型了，会是默认的GET请求</h4></li>
 </ul>
-<p>###SpringMVC常用注解</p>
-<ul>
+<h3 id="SpringMVC常用注解"><a href="#SpringMVC常用注解" class="headerlink" title="SpringMVC常用注解"></a>SpringMVC常用注解</h3><ul>
 <li>@Controller<br>写在类的上面，定义一个控制器类Controller<br>不会直接依赖于HttpServletRequest 和HttpServletResponse 等HttpServlet 对象，它们可以通过Controller 的方法参数灵活的获取到</li>
 </ul>
 <p>以下是@Controller的方法</p>
@@ -115,11 +114,10 @@
 <p>2、consumes= “text/html;charset=UTF-8”， produces = “text/html;charset=UTF-8”</p>
 <p>consumes： 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html;</p>
 <p>produces:    指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；</p>
-<p>3、params，headers ####(重点是必须包含，否则访问不到资源)</p>
+<p>3、params，headers #### (重点是必须包含，否则访问不到资源)</p>
 <p>params： 指定request中必须包含某些参数值是，才让该方法处理。</p>
 <p>headers： 指定request中必须包含某些指定的header值，才能让该方法处理请求。</p>
-<p>#####今天就先写到这吧</p>
-
+<h5 id="今天就先写到这吧"><a href="#今天就先写到这吧" class="headerlink" title="今天就先写到这吧"></a>今天就先写到这吧</h5>
       
     </div>
     <footer class="article-footer">
