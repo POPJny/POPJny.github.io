@@ -394,6 +394,71 @@ for (int i = 0; i &lt; 100; i++) {
 
 
   
+    <article id="post-SpringMVC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/07/SpringMVC/" class="article-date">
+  <time datetime="2018-05-07T13:59:35.000Z" itemprop="datePublished">2018-05-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/SpringMVC/">SpringMVC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SpringMVC-支持restful的风格（GET，POST-DELETE-PUT）"><a href="#SpringMVC-支持restful的风格（GET，POST-DELETE-PUT）" class="headerlink" title="SpringMVC 支持restful的风格（GET，POST,DELETE,PUT）"></a>SpringMVC 支持restful的风格（GET，POST,DELETE,PUT）</h3><ul>
+<li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.GET)</p>
+</li>
+<li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.POST)</p>
+</li>
+<li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.DELETE)   // 因为这个需要Ajax请求，所有返回的是个json</p>
+</li>
+<li><p>@RequestMapping(value = “/{id}”, method = RequestMethod.PUT)<br>####简写@RequestMapping(“/{id}”)但是这样不能再设置请求类型了，会是默认的GET请求</p>
+</li>
+</ul>
+<p>###SpringMVC常用注解</p>
+<ul>
+<li>@Controller<br>写在类的上面，定义一个控制器类Controller<br>不会直接依赖于HttpServletRequest 和HttpServletResponse 等HttpServlet 对象，它们可以通过Controller 的方法参数灵活的获取到</li>
+</ul>
+<p>以下是@Controller的方法</p>
+<ul>
+<li>@RequestMapping()</li>
+</ul>
+<p>RequestMapping注解有六个属性，下面我们把她分成三类进行说明（下面有相应示例）。</p>
+<p>1、 value， method；</p>
+<p>value：     指定请求的实际地址，指定的地址可以是URI Template 模式（后面将会说明）；</p>
+<p>method：  指定请求的method类型， GET、POST、PUT、DELETE等；</p>
+<p>2、consumes= “text/html;charset=UTF-8”， produces = “text/html;charset=UTF-8”</p>
+<p>consumes： 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html;</p>
+<p>produces:    指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；</p>
+<p>3、params，headers ####(重点是必须包含，否则访问不到资源)</p>
+<p>params： 指定request中必须包含某些参数值是，才让该方法处理。</p>
+<p>headers： 指定request中必须包含某些指定的header值，才能让该方法处理请求。</p>
+<p>#####今天就先写到这吧</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/07/SpringMVC/" data-id="cjhm95npy0000b8tzukligm0c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
 </section>
@@ -430,6 +495,10 @@ for (int i = 0; i &lt; 100; i++) {
         
           <li>
             <a href="/2018/05/07/复习/">复习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/07/SpringMVC/">SpringMVC</a>
           </li>
         
       </ul>
